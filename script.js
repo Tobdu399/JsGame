@@ -2,7 +2,6 @@ var player;
 var playerScore = 0;
 
 var pointsAmount = 10;
-var pointsRemaining = pointsAmount;
 
 var points = [];
 
@@ -81,16 +80,28 @@ function component(width, height, color, x, y) {
     }
     this.setDeleted = function() {
         this.deleted = true;
-        pointsRemaining -= 1;
+        pointsRemaining = getRemainingPoints();
+        console.log(pointsRemaining);
 
         if (pointsRemaining == 0) {
             displayPoints();
-            pointsRemaining = pointsAmount;
         }
     }
     this.getDeleted = function () {
         return this.deleted;
     }
+}
+
+function getRemainingPoints() {
+    var deletedPoints = 0;
+    
+    for (i = 0; i < points.length; i++) {
+        if (points[i].getDeleted()) {
+            deletedPoints++;
+        }
+    }
+
+    return points.length - deletedPoints;
 }
 
 function updateDisplay() {
