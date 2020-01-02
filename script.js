@@ -2,7 +2,6 @@ var player;
 var playerScore = 0;
 
 var pointsAmount = 10;
-
 var points = [];
 
 var displayWidth = 580;
@@ -25,6 +24,8 @@ var pointHeight = 4;
 function startGame() {
     player = new component(playerWidth, playerHeight, "#3ad64d", displayWidth / 2, displayHeight / 2);
     display.start();
+    displayBarrierY();
+    displayBarrierX();
 }
 
 function displayPoints() {
@@ -69,6 +70,7 @@ function component(width, height, color, x, y) {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
         ctx.fill();
+        
         // This makes player and points squares:
         // ctx.fillRect(this.x, this.y, this.width, this.height);
     }
@@ -78,6 +80,7 @@ function component(width, height, color, x, y) {
 
         checkPlayer();
     }
+
     this.setDeleted = function() {
         this.deleted = true;
         pointsRemaining = getRemainingPoints();
@@ -87,6 +90,7 @@ function component(width, height, color, x, y) {
             displayPoints();
         }
     }
+
     this.getDeleted = function () {
         return this.deleted;
     }
@@ -108,6 +112,12 @@ function updateDisplay() {
     display.clear();
     player.newPos();    
     player.update();
+
+    barrierY.newPos();
+    barrierY.update();
+
+    barrierX.newPos2();
+    barrierX.update();
 
     for (var i = 0; i < points.length; i++) {
         if (points[i].getDeleted()) {
@@ -224,7 +234,9 @@ function checkPlayer() {
     // console.log(player.x);
     // console.log(player.y);
 
-    if (player.x == 18 || player.x == displayWidth - 18 || player.y == 18 || player.y == displayHeight - 18) {
+    if (player.x == 18 || player.x == displayWidth - 18 
+        || player.y == 18 || player.y == displayHeight - 18 
+        || barrierX.isInside(player) || barrierY.isInside(player)) {
         alert("Game Over! \n You reached " + playerScore + " points");
         playerScore = 0;
         document.getElementById("playerScore").innerHTML = "Score: " + playerScore;
@@ -237,6 +249,8 @@ function checkPlayer() {
         movingLeft = 0;
         movingRight = 0;
 
+        displayBarrierY();
+        displayBarrierX();
         displayPoints();
 
         for (var i = 0; i < points.length; i++) {
