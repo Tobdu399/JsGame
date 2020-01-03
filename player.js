@@ -117,9 +117,15 @@ function checkPlayer() {
     if (player.x == 18 || player.x == displayWidth - 18 
         || player.y == 18 || player.y == displayHeight - 18 
         || barrierX.isInside(player) || barrierY.isInside(player)) {
+
+        // TODO: better looking game ending screen instead of alert
+
         alert("Game Over! \n You reached " + playerScore + " points");
+
         playerScore = 0;
+        pointsMultiplier = 1;
         document.getElementById("playerScore").innerHTML = "Score: " + playerScore;
+        document.getElementById("playerMultiplier").innerHTML = "Mulitplier: " + pointsMultiplier + "x";
 
         player.speedX = 0;
         player.speedY = 0;

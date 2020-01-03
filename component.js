@@ -31,6 +31,8 @@ function component(width, height, color, x, y) {
 
         if (pointsRemaining == 0) {
             displayPoints();
+            pointsMultiplier += 1;
+            document.getElementById("playerMultiplier").innerHTML = "Multiplier: " + pointsMultiplier + "x";
         }
     }
 

@@ -32,7 +32,7 @@ function updateDisplay() {
         if (IsSameLocation(player, points[i])) {
             points[i].setDeleted();
 
-            playerScore += 100;
+            playerScore += 100 * pointsMultiplier;
             document.getElementById("playerScore").innerHTML = "Score: " + playerScore;
         } 
     
