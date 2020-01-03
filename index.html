@@ -1,24 +1,56 @@
-<!DCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        
         <link rel="stylesheet" type="text/css" href="styles.css">
+
         <script type="text/javascript" src="script.js"></script>
         <script type="text/javascript" src="score.js"></script>
         <script type="text/javascript" src="barrier.js"></script>
+        <script type="text/javascript" src="player.js"></script>
+        <script type="text/javascript" src="display.js"></script>
+        <script type="text/javascript" src="component.js"></script>
+
         <title>Javascript Game</title>
     </head>
 
-    <body onload="startGame()">
-        <div class="playerValues">
-            <p id="playerScore">Score: 0</p>
-            <p id="playerMultiplier">Multiplier: 1x</p>
+    <body>
+        <canvas id="fakeCanvas" width="580" height="400">
+            <h1>Some text</h1>
+        </canvas>
 
-            <div class="reloadImg">
-                <img id="reload" src="Pictures/refresh.png" onclick="location.reload()">
+        <script type="text/javascript">
+            var canvas = document.getElementById("fakeCanvas");
+            var context = canvas.getContext("2d");
+
+            context.font = "20px Arial";
+            context.fillText("Start game by pressing play button", (canvas.width / 2) - 160, canvas.height / 2);
+        </script>
+
+        <div class="control-panel">
+            <div class="playerValues">
+                <p id="playerScore">Score: 0</p>
+                <p id="playerMultiplier">Multiplier: 1x</p>
+
+                <div class="reloadImg">
+                    <img id="reload" src="Pictures/refresh.png" onclick="location.reload()">
+                </div>
+            </div>
+
+            <div id="startBtn" class="startBtn">
+                <img onclick="clearCanvas(); removeButton(); startGame()" src="Pictures/play-button.png">
             </div>
         </div>
+
+        <!-- Arrow buttons for moving -->
+            <div class="arrowButtons">
+                <img id="up" onclick="moveup()" src="Pictures/up.png"><br>
+                <img id="left" onclick="moveleft()" src="Pictures/left.png">
+                <img id="right" onclick="moveright()" src="Pictures/right.png"><br>
+                <img id="down" onclick="movedown()" src="Pictures/down.png">
+            </div>
     </body>
 
 </html>

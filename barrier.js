@@ -76,6 +76,3 @@ function moveBarrier() {
         barrierX.speedX -= 8;
     }
 }
-
-// Check if player hits laser ----------------------------------
-

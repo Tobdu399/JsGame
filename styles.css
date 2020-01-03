@@ -15,6 +15,12 @@ canvas {
     float: left;
 }
 
+.control-panel {
+    text-align: center;
+    float: left;
+    margin: 0px 0px 0px 20px;
+}
+
 .playerValues {
     border-radius: 5px;
     background-color: #dedede;
@@ -23,8 +29,6 @@ canvas {
 
     width: 130px;
     font-size: 17px;
-    float: left;
-    margin: 0px 0px 0px 20px;
 }
 
 #reload {
@@ -45,4 +49,76 @@ canvas {
 
 .reloadImg {
     text-align: center;
+}
+
+.startBtn img {
+    background-color: #5ff05d;
+
+    border-radius: 15px;
+    margin-top: 50px;
+
+    padding: 15px;
+    width: 60px;
+
+    cursor: pointer;
+    transition: 0.3s ease 0s;
+}
+
+.startBtn img:hover {
+    background-color: #26ad24;
+}
+
+.arrowButtons {
+    text-align: center;
+}
+
+.arrowButtons img {
+    padding: 10px;
+    width: 60px;
+}
+
+#up {
+    margin-top: 20px;
+    margin-left: 100px;
+    margin-right: 100px;
+
+    cursor: pointer;
+    transition: 0.3s ease 0s;
+}
+
+#up:hover {
+    background-color: #dedede;
+    border-radius: 15px;
+}
+
+#left {
+    margin-right: 60px;
+
+    cursor: pointer;
+    transition: 0.3s ease 0s;
+}
+
+#left:hover {
+    background-color: #dedede;
+    border-radius: 15px;
+}
+
+#right {
+    cursor: pointer;
+    transition: 0.3s ease 0s;
+}
+
+#right:hover {
+    background-color: #dedede;
+    border-radius: 15px;
+}
+
+#down {
+    cursor: pointer;
+    transition: 0.3s ease 0s;
+}
+
+#down:hover {
+    background-color: #dedede;
+    border-radius: 15px;
 }
