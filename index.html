@@ -19,16 +19,14 @@
 
     <body>
         <!-- This canvas will be deleted after game begins -->
-        <canvas id="fakeCanvas" width="580" height="400">
-            <h1>Some text</h1>
-        </canvas>
+        <canvas id="fakeCanvas" width="580" height="400"></canvas>
 
         <script type="text/javascript">
             var canvas = document.getElementById("fakeCanvas");
             var context = canvas.getContext("2d");
 
             context.font = "20px Montserrat";
-            context.fillText("Start game by pressing play button", (canvas.width / 2) - 180, canvas.height / 2);
+            context.fillText("Start game by pressing play button", (canvas.width / 2) - 180, (canvas.height / 2) + 5);
         </script>
 
         <div class="control-panel">

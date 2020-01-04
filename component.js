@@ -27,9 +27,11 @@ function component(width, height, color, x, y) {
     this.setDeleted = function() {
         this.deleted = true;
         pointsRemaining = getRemainingPoints();
-        console.log(pointsRemaining);
+        console.log("Points remaining: " + pointsRemaining);
 
         if (pointsRemaining == 0) {
+            console.log("Genrating more points...");
+
             displayPoints();
             pointsMultiplier += 1;
             document.getElementById("playerMultiplier").innerHTML = "Multiplier: " + pointsMultiplier + "x";

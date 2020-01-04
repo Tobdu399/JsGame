@@ -129,8 +129,9 @@ function checkPlayer() {
         var ctx = gameDisplay.getContext("2d");
 
         document.getElementById("gameDisplay").style.WebkitFilter="grayscale(100%)";
-        ctx.font = "25px Montserrat";
-        ctx.fillText("Game Over!\nYou Reached " + playerScore + " points", 65, displayHeight / 2); 
+        ctx.font = "20px Montserrat";
+        ctx.fillText("Game Over!\nYou Reached " + playerScore + " points", 20, 40);
+        ctx.textAlign = "center;"
 
         player.speedX = 0;
         player.speedY = 0;

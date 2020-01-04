@@ -9,7 +9,8 @@ body {
 }
 
 canvas {
-    background-color: #dedede;
+    background-image: url("Pictures/background.svg");
+
     border: solid #ccc 2px;
     border-radius: 5px;
     float: left;
@@ -22,9 +23,10 @@ canvas {
 }
 
 .playerValues {
+    background-image: url("Pictures/menu-background.png");
+    color: #ffffff;
+
     border-radius: 5px;
-    background-color: #dedede;
-    border: solid #ccc 2px;
     padding: 10px;
 
     width: 130px;
@@ -32,19 +34,15 @@ canvas {
 }
 
 #reload {
-    width: 60px;
-    padding: 15px;
+    width: 100px;
     border-radius: 15px;
-    margin-top: 20px;
-
-    /*background-color: #bfbfbf;*/
 
     cursor: pointer;
     transition: 0.3s ease 0s;
 }
 
 #reload:hover {
-    background-color: #c2bcbc;
+    background-color: #adaba7;
 }
 
 .reloadImg {
@@ -52,12 +50,12 @@ canvas {
 }
 
 .startBtn img {
-    background-color: #5ff05d;
+    /* background-color: #5ff05d; */
 
     border-radius: 15px;
     margin-top: 50px;
 
-    padding: 15px;
+    padding: 20px;
     width: 60px;
 
     cursor: pointer;
@@ -65,60 +63,6 @@ canvas {
 }
 
 .startBtn img:hover {
-    background-color: #26ad24;
-}
-
-.arrowButtons {
-    text-align: center;
-}
-
-.arrowButtons img {
-    padding: 10px;
-    width: 60px;
-}
-
-#up {
-    margin-top: 20px;
-    margin-left: 100px;
-    margin-right: 100px;
-
-    cursor: pointer;
-    transition: 0.3s ease 0s;
-}
-
-#up:hover {
+    /* background-color: #26ad24; */
     background-color: #dedede;
-    border-radius: 15px;
-}
-
-#left {
-    margin-right: 60px;
-
-    cursor: pointer;
-    transition: 0.3s ease 0s;
-}
-
-#left:hover {
-    background-color: #dedede;
-    border-radius: 15px;
-}
-
-#right {
-    cursor: pointer;
-    transition: 0.3s ease 0s;
-}
-
-#right:hover {
-    background-color: #dedede;
-    border-radius: 15px;
-}
-
-#down {
-    cursor: pointer;
-    transition: 0.3s ease 0s;
-}
-
-#down:hover {
-    background-color: #dedede;
-    border-radius: 15px;
 }
