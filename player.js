@@ -11,7 +11,11 @@ var movingDown = 0;
 var movingLeft = 0;
 var movingRight = 0;
 
+var gameOver = false;
+
 function startGame() {
+    gameOver = false;
+
     player = new component(playerWidth, playerHeight, "#3ad64d", displayWidth / 2, displayHeight / 2);
     display.start();
     displayPoints();
@@ -118,36 +122,21 @@ function checkPlayer() {
         || player.y == 18 || player.y == displayHeight - 18 
         || barrierX.isInside(player) || barrierY.isInside(player)) {
 
-        // TODO: better looking game ending screen instead of alert
+        // Disable player movement until the game starts again
+        gameOver = true;
 
-        alert("Game Over! \n You reached " + playerScore + " points");
+        var gameDisplay = document.getElementById("gameDisplay");
+        var ctx = gameDisplay.getContext("2d");
 
-        playerScore = 0;
-        pointsMultiplier = 1;
-        document.getElementById("playerScore").innerHTML = "Score: " + playerScore;
-        document.getElementById("playerMultiplier").innerHTML = "Mulitplier: " + pointsMultiplier + "x";
+        document.getElementById("gameDisplay").style.WebkitFilter="grayscale(100%)";
+        ctx.font = "25px Montserrat";
+        ctx.fillText("Game Over!\nYou Reached " + playerScore + " points", 65, displayHeight / 2); 
 
         player.speedX = 0;
         player.speedY = 0;
 
-        movingUp = 0;
-        movingDown = 0;
-        movingLeft = 0;
-        movingRight = 0;
-
-        displayBarrierY();
-        displayBarrierX();
-        displayPoints();
-
-        for (var i = 0; i < points.length; i++) {
-            points[i].update();
-        }
-
-        /* Player position is canvas width and height divided by 2 
-        meaning that player will respawn in the middle */
-        
-        player.x = displayWidth / 2;
-        player.y = displayHeight / 2;
+        barrierX.speedX = 0;
+        barrierY.speedY = 0;
     }
 }
 
@@ -166,6 +155,10 @@ function IsSameLocation (cursor, point) {
 
 // Move player using arrow buttons ----------------------------------------
 document.onkeydown = function(e) {
+    if (gameOver) {
+        return;
+    }
+
     switch (e.key) {
         case "ArrowUp":
             moveup();

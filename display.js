@@ -1,6 +1,7 @@
 var display = {
     canvas : document.createElement("canvas"),
     start : function() {
+        this.canvas.id="gameDisplay";
         this.canvas.width = displayWidth;
         this.canvas.height = displayHeight;
         this.context = this.canvas.getContext("2d");
