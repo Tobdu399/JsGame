@@ -30,7 +30,9 @@ function component(width, height, color, x, y) {
         console.log("Points remaining: " + pointsRemaining);
 
         if (pointsRemaining == 0) {
-            console.log("Genrating more points...");
+            playerStage += 1;
+
+            document.getElementById("playerStage").innerHTML = "Stage: " + playerStage;
 
             displayPoints();
             pointsMultiplier += 1;

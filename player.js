@@ -15,6 +15,8 @@ var gameOver = false;
 
 function startGame() {
     gameOver = false;
+    playerStage = 1;
+    document.getElementById("playerStage").innerHTML = "Stage: " + playerStage;
 
     player = new component(playerWidth, playerHeight, "#3ad64d", displayWidth / 2, displayHeight / 2);
     display.start();

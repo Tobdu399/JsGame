@@ -1,5 +1,6 @@
 var barrierY;
 var barrierX;
+var speedIncrement = 0.5;
 
 function displayBarrierY() {
     var wallHeight = 100;
@@ -36,7 +37,7 @@ function barrier(width, height, color, x, y) {
     this.speedX = 0;
     this.x = x;
     this.y = y;
-
+    
     this.update = function() {
         ctx = display.context;
         ctx.fillStyle = color;
@@ -121,10 +122,10 @@ function barrier(width, height, color, x, y) {
 
 function moveBarrier() {
     if (barrierY.speedY == 0) {
-        barrierY.speedY -= 6;
+        barrierY.speedY -= 3 + playerStage * speedIncrement;
     }
 
     else if (barrierX.speedX == 0) {
-        barrierX.speedX -= 6;
+        barrierX.speedX -= 3 + playerStage * speedIncrement;
     }
 }

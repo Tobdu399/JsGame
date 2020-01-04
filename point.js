@@ -1,7 +1,8 @@
 var points = [];
 var pointsAmount = 10;
-
 var pointsMultiplier = 1;
+
+var playerStage = 0;
 
 var displayWidth = 580;
 var displayHeight = 400;

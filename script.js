@@ -22,9 +22,11 @@ function retry() {
         player.y = displayHeight / 2;
 
         playerScore = 0;
+        playerStage = 1;
         pointsMultiplier = 1;
 
         document.getElementById("playerScore").innerHTML = "Score: " + playerScore;
+        document.getElementById("playerStage").innerHTML = "Stage: " + playerStage;
         document.getElementById("playerMultiplier").innerHTML = "Mulitplier: " + pointsMultiplier + "x";
 
         player.speedX = 0;
