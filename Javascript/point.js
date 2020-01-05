@@ -1,20 +1,3 @@
-var points = [];
-var pointsAmount = 10;
-var pointsMultiplier = 1;
-
-var playerStage = 0;
-
-var displayWidth = 580;
-var displayHeight = 400;
-
-var playerScore = 0;
-
-var deployPointX;
-var deployPointY;
-
-var pointWidth = 4;
-var pointHeight = 4;
-
 function displayPoints() {
     for (i = 0; i < pointsAmount; i++) {
         deployPointX = displayWidth - 80;

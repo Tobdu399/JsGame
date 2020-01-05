@@ -1,18 +1,3 @@
-var player;
-
-var displayWidth = 580;
-var displayHeight = 400;
-
-var playerWidth = 15;
-var playerHeight = 15;
-
-var movingUp = 0;
-var movingDown = 0;
-var movingLeft = 0;
-var movingRight = 0;
-
-var gameOver = false;
-
 function startGame() {
     gameOver = false;
     playerStage = 1;
@@ -132,8 +117,8 @@ function checkPlayer() {
 
         document.getElementById("gameDisplay").style.WebkitFilter="grayscale(100%)";
         ctx.font = "20px Montserrat";
+        ctx.fillStyle = "black";
         ctx.fillText("Game Over!\nYou Reached " + playerScore + " points", 20, 40);
-        ctx.textAlign = "center;"
 
         player.speedX = 0;
         player.speedY = 0;

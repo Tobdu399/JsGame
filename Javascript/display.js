@@ -11,11 +11,21 @@ var display = {
 
     clear : function() {
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    },
+
+    displayStage : function() {
+        var gameDisplay = document.getElementById("gameDisplay");
+        var canvas = gameDisplay.getContext("2d");
+
+        canvas.font = "bold 100px Montserrat";
+        canvas.fillStyle = "#b4b4b4";
+        canvas.fillText(playerStage, 20, displayHeight - 10);
     }
 }
 
 function updateDisplay() {
     display.clear();
+    display.displayStage();
     player.newPos();    
     player.update();
 

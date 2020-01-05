@@ -1,7 +1,3 @@
-var barrierY;
-var barrierX;
-var speedIncrement = 0.5;
-
 function displayBarrierY() {
     var wallHeight = 100;
     
@@ -12,8 +8,6 @@ function displayBarrierY() {
 
     barrierY = new barrier(15, wallHeight, "#ff787a", wallX, wallY);
     moveBarrier();
-
-    // delay = setTimeout(displayBarrierY, 1500);
 }
 
 function displayBarrierX() {
@@ -26,8 +20,6 @@ function displayBarrierX() {
 
     barrierX = new barrier(wallWidth, 15, "#ff787a", wallX, wallY);
     moveBarrier();
-
-    // delay = setTimeout(displayBarrierX, 2000);
 }
 
 function barrier(width, height, color, x, y) {
@@ -122,10 +114,10 @@ function barrier(width, height, color, x, y) {
 
 function moveBarrier() {
     if (barrierY.speedY == 0) {
-        barrierY.speedY -= 3 + playerStage * speedIncrement;
+        barrierY.speedY -= 2 + playerStage * speedIncrement;
     }
 
     else if (barrierX.speedX == 0) {
-        barrierX.speedX -= 3 + playerStage * speedIncrement;
+        barrierX.speedX -= 2 + playerStage * speedIncrement;
     }
 }

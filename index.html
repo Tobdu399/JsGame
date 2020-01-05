@@ -7,27 +7,29 @@
         <link rel="icon" href="Pictures/favicon.jpg">
         <link rel="stylesheet" type="text/css" href="styles.css">
 
-        <script type="text/javascript" src="script.js"></script>
-        <script type="text/javascript" src="point.js"></script>
-        <script type="text/javascript" src="barrier.js"></script>
-        <script type="text/javascript" src="player.js"></script>
-        <script type="text/javascript" src="display.js"></script>
-        <script type="text/javascript" src="component.js"></script>
-        <script type="text/javascript" src="settings.js"></script>
+        <script type="text/javascript" src="Javascript/script.js"></script>
+        <script type="text/javascript" src="Javascript/point.js"></script>
+        <script type="text/javascript" src="Javascript/barrier.js"></script>
+        <script type="text/javascript" src="Javascript/player.js"></script>
+        <script type="text/javascript" src="Javascript/display.js"></script>
+        <script type="text/javascript" src="Javascript/component.js"></script>
+        <script type="text/javascript" src="Javascript/settings.js"></script>
 
         <title>Javascript Game</title>
     </head>
 
-    <body>
+    <body onload="displayInfoText()">
         <!-- This canvas will be deleted after game begins -->
         <canvas id="fakeCanvas" width="580" height="400"></canvas>
 
         <script type="text/javascript">
-            var canvas = document.getElementById("fakeCanvas");
-            var context = canvas.getContext("2d");
+            function displayInfoText() {
+                var canvas = document.getElementById("fakeCanvas");
+                var context = canvas.getContext("2d");
 
-            context.font = "20px Montserrat";
-            context.fillText("Start game by pressing play button", (canvas.width / 2) - 180, (canvas.height / 2) + 5);
+                context.font = "20px Montserrat";
+                context.fillText("Start game by pressing play button", (canvas.width / 2) - 180, (canvas.height / 2) + 5);
+            }
         </script>
 
         <div class="control-panel">
@@ -42,7 +44,7 @@
             </div>
 
             <div id="startBtn" class="startBtn">
-                <img onclick="clearCanvas(); removeButton(); startGame()" src="Pictures/play-button.png">
+                <img onclick="clearCanvas(); removeButton(); startGame();" src="Pictures/play-button.png">
             </div>
         </div>
     </body>

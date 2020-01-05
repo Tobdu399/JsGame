@@ -1,2 +1,3 @@
-# JsGame
-My "clone version" of Agar.io game that works only on computers becouse it requires arrow buttons for moving
+#JsGame
+
+This is my first game made using only Javascript. This game works only on computers unless your device has arrow buttons.

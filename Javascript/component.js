@@ -27,7 +27,6 @@ function component(width, height, color, x, y) {
     this.setDeleted = function() {
         this.deleted = true;
         pointsRemaining = getRemainingPoints();
-        console.log("Points remaining: " + pointsRemaining);
 
         if (pointsRemaining == 0) {
             playerStage += 1;
