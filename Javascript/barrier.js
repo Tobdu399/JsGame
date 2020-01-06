@@ -1,24 +1,20 @@
-function displayBarrierY() {
-    var wallHeight = 100;
-    
+function displayBarrierY() {    
     var wallDeployX = displayWidth - 80;
 
     var wallX = Math.random() * wallDeployX + 40;
     var wallY = displayHeight;
 
-    barrierY = new barrier(15, wallHeight, "#ff787a", wallX, wallY);
+    barrierY = new barrier(wallThickness, wallHeight, "#ff787a", wallX, wallY);
     moveBarrier();
 }
 
 function displayBarrierX() {
-    var wallWidth = 100;
-
     var wallDeployY = displayHeight - 40;
 
     var wallX = displayWidth;
     var wallY = Math.random() * wallDeployY + 20;
 
-    barrierX = new barrier(wallWidth, 15, "#ff787a", wallX, wallY);
+    barrierX = new barrier(wallWidth, wallThickness, "#ff787a", wallX, wallY);
     moveBarrier();
 }
 

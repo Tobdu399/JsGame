@@ -19,6 +19,10 @@ var barrierY;
 var barrierX;
 var speedIncrement = 0.5;
 
+var wallHeight = 80;
+var wallWidth = 80;
+var wallThickness = 12;
+
 // Points ----------------------------------------------
 var points = [];
 var pointsAmount = 10;
